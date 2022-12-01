@@ -12,5 +12,3 @@ else:
 
 for i in range(1, argc):
     print("{:d}: {:s}".format(i, argv[i]))
-
-

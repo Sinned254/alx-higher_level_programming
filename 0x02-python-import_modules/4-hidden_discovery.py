@@ -5,4 +5,3 @@ names = dir(hidden_4)
 for name in names:
     if not name.startswith('__'):
         print("{:s}".format(name))
-
