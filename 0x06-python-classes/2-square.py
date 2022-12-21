@@ -3,6 +3,7 @@
 ``size``.
 """
 
+
 class Square:
     """``Square`` class.
     """

@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Module containing the ``Square`` class with a private instance attribute
+``size``.
+"""
+
 
 class Square:
     """Square class."""
