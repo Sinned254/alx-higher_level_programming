@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python3i
+
 
 class Square:
     """Square class."""
@@ -22,7 +23,7 @@ class Square:
 
     def area(self):
         """Gets the are of a square.
-        
+
         Returns:
             Area of a square
 

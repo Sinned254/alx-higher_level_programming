@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 class Square:
     """Square class."""
 
@@ -20,7 +21,6 @@ class Square:
 
         """
         return self.__size * self.__size
-
 
     @property
     def size(self):

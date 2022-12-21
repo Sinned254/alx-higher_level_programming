@@ -23,7 +23,6 @@ class Square:
         """
         return self.__size * self.__size
 
-
     @property
     def size(self):
         return self.__size
@@ -58,7 +57,8 @@ class Square:
         Args:
             value (tuple): tuple of two positive integers coodinate
         Raises:
-            TypeError: if `value` is not a tuple of two positive integer coordinates
+            TypeError: if `value` is not a tuple of two
+            positive integer coordinates
 
         """
         if not isinstance(value, tuple):
