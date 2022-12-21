@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-
+"""Module containing the ``Square`` class with a private instance attribute
+``size``.
+"""
 
 class Square:
-    """Square class."""
+    """``Square`` class.
+    """
 
     def __init__(self, size=0):
         """__init__method that sets the size of square.

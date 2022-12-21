@@ -4,7 +4,7 @@
 """
 
 class Square:
-    """Square class."""
+    """``Square`` class."""
 
     def __init__(self, size):
         """__init__method for Square.
