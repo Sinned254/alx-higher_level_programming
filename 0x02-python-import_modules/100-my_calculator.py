@@ -23,4 +23,3 @@ else:
     else:
         res = calc.div(a, b)
     print("{:d} {:s} {:d} = {:d}".format(a, op, b, res))
-
