@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import hidden_4 as toprint
-names = dir(toprint)
+    import hidden_4
+names = dir(hidden_4)
 for name in names:
-    if not name.startwith("__"):
+    if not name.startswith("__"):
         print("{:s}".format(name))
