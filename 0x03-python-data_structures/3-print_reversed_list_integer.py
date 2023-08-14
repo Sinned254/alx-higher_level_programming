@@ -1,7 +1,7 @@
 #!/usr/bin/pythoni3
 def print_reversed_list_integer(my_list=[]):
     if my_list is not None:
-        my_list.reverse()
-        listlen = len(my_list)
+        newlist = my_list[::-1]
+        listlen = len(newlist)
         for i in range(listlen):
-            print("{:d}".format(my_list[i]))
+            print("{:d}".format(newlist[i]))
