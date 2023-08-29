@@ -10,6 +10,7 @@ def divide_safe(a, b):
     finally:
         return res
 
+
 def list_division(my_list_1, my_list_2, list_length):
     res_list = []
     for i in range(list_length):
