@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module contains the ``Square`` class with a private instance attribute 
+"""Module contains the ``Square`` class with a private instance attribute
 'size'
 """
 
@@ -24,7 +24,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
-        def area(self):
+    def area(self):
         """Gets the are of a square.
 
         Returns:

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Module contains the ``Square`` class with a private instance attribute 
-'size'
+"""Module contains the ``Square`` class with a private instance
+attribute 'size'
 """
 
 

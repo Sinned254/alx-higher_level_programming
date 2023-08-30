@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Module containing the ``Square`` class with a private instance attribute
-``size``.
+"""Module containing the ``Square`` class
 """
 
 
@@ -48,7 +47,7 @@ class Square:
             raise ValueError("size must be >=0")
         self.__size = value
 
-         def my_print(self):
+    def my_print(self):
         """Prints a # repesantation of square"""
 
         for i in range(self.__size):
