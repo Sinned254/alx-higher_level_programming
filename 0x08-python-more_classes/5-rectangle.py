@@ -5,6 +5,7 @@
 
 class Rectangle:
     """Class Rectangle"""
+
     def __init__(self, width=0, height=0):
         """__init__ method.
         Args:
@@ -86,7 +87,7 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
-        """Returns the pwerimeter of arectangle"""
+        """Returns the perimeter of a rectangle"""
         if self.width == 0 or self.height == 0:
             return 0
         return self.width * 2 + self.height * 2

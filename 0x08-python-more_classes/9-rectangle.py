@@ -53,7 +53,7 @@ class Rectangle:
     @width.setter
     def width(self, width):
         if not isinstance(width, int):
-            raise TypeError("width must be integer")
+            raise TypeError("width must be an integer")
         if width < 0:
             raise ValueError("width must be >= 0")
         self.__width = width
@@ -95,7 +95,7 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
-        """Returns the pwerimeter of arectangle"""
+        """Returns the perimeter of a rectangle"""
         if self.width == 0 or self.height == 0:
             return 0
         return self.width * 2 + self.height * 2
@@ -110,9 +110,9 @@ class Rectangle:
             larger area of the two rectangle areas
         """
         if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of rectangle")
+            raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of rectanle")
+            raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_2.area() > rect_1.area():
             return rect_2
         return rect_1
