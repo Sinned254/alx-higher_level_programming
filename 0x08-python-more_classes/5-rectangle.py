@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Module has definatinion of class Rectangle
+with methods area and perimeter of a Rectangle
+width and height  properties
 """
 
 
