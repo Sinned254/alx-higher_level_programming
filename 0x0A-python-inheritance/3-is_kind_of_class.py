@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Module contains ``is_kind_of_class`` funtion
+"""
+
+
 def is_kind_of_class(obj, a_class):
     """Method checks if object insnance of class or subclass
 

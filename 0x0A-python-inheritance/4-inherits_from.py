@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Module containd funtion  ``inherits_from`` defination.
+"""
+
+
 def inherits_from(obj, a_class):
     """ check if the object is an instance of a class that
     inherited from specified class 

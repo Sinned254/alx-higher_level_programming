@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Module comatind ``is_same_class`` function
+"""
+
+
 def is_same_class(obj, a_class):
     """ Method checks if object is instances of a class
 
@@ -8,4 +12,7 @@ def is_same_class(obj, a_class):
         abj: object
         a_class: class name
     """
-    return type(obj) == a_class
+    if type(obj) == a_class:
+        return True
+    else:
+        return False

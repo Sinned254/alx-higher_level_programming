@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Contains ``BaseGeometry`` with method area
 """
+
+
 class BaseGeometry:
     def area(self):
         """raise exception are not implemeted
@@ -23,7 +25,10 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """class ``Rectangle`` defination
+    """
     def __init__(self, width, height):
+        """Initializes class ``Rectangle``"""
         self.__width = 0  # Initialize width as 0
         self.__height = 0  # Initialize height as 0
         self.integer_validator("width", width)  # Validate and set width

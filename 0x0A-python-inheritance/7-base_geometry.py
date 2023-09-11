@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Contains ``BaseGeometry`` with method area
 """
+
+
 class BaseGeometry:
     def area(self):
         """raise exception are not implemeted
