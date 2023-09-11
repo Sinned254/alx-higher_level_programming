@@ -5,6 +5,7 @@ class list
 
 
 class MyList(list):
+    """``MyList`` class defination."""
     def print_sorted(self):
         """ Prints sorted list
         """
