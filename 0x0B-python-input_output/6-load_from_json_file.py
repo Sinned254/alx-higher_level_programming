@@ -7,8 +7,8 @@ import json
 def load_from_json_file(filename):
     """Funtion creates an object from JSON file
     Args:
-        filename: file anme fo tthe file used 
-    Returns: nothing
+        filename: file anme fo tthe file used
+    Returns: data to load
     """
     with open(filename, 'r', encoding='utf-8') as f:
         data = json.load(f)

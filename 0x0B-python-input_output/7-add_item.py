@@ -13,7 +13,11 @@ def add_items_to_list_and_save(args, filename):
         args: arguments
         filename: filename to save to
     """
-    existing_data = load_from_json_file(filename) or []
+    try:
+        existing_data = load_from_json_file(filename)
+    except FileNotFoundError:
+        existing_data = []
+
     existing_data.extend(args)
     save_to_json_file(existing_data, filename)
 

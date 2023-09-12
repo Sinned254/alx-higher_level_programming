@@ -2,6 +2,7 @@
 """module conatins funtion ``append_write``
 """
 
+
 def append_write(filename="", text=""):
     """Funtion appends charatcers to a file
     Args:

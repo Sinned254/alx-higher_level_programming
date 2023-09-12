@@ -6,8 +6,8 @@
 def write_file(filename="", text=""):
     """Funtion writes content writes content to fileanme
 
-    Args: 
-        filename: Name of the file 
+    Args:
+        filename: Name of the file
         text: text to be written
     Returns: Number of character written
     """
