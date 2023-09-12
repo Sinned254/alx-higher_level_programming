@@ -5,7 +5,7 @@
 
 def inherits_from(obj, a_class):
     """ check if the object is an instance of a class that
-    inherited from specified class 
+    inherited from specified class
 
     Returns: True if it does otherwise false
 

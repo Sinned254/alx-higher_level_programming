@@ -1,30 +1,44 @@
-import unittest
+Tests For The integer_validator method in 7-base_geometry.py
 
-class TestBaseGeometry(unittest.TestCase):
-    def test_area_not_implemented(self):
-        bg = BaseGeometry()
-        with self.assertRaises(Exception) as context:
-            bg.area()
-        self.assertEqual(str(context.exception), "area() is not implemented")
+Importing the class from it's module
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> bg = BaseGeometry()
 
-    def test_integer_validator(self):
-        bg = BaseGeometry()
+General Documentation tests:
+>>> print(__import__("7-base_geometry").__doc__)
+Module contains the ``BaseGeometry`` class definition.
+<BLANKLINE>
 
-        # Test valid integer
-        try:
-            bg.integer_validator("test_var", 42)
-        except (TypeError, ValueError) as e:
-            self.fail(f"integer_validator raised an unexpected exception: {e}")
+>>> print(__import__("7-base_geometry").BaseGeometry.__doc__)
+``BaseGeometry`` class definition.
+<BLANKLINE>
 
-        # Test non-integer value
-        with self.assertRaises(TypeError) as context:
-            bg.integer_validator("test_var", "not_an_integer")
-        self.assertEqual(str(context.exception), "test_var must be an integer")
+>>> print(__import__("7-base_geometry").BaseGeometry.integer_validator.__doc__) #doctest: +ELLIPSIS
+validates the value of a parameter.
+...
+<BLANKLINE>
 
-        # Test non-positive integer value
-        with self.assertRaises(ValueError) as context:
-            bg.integer_validator("test_var", -5)
-        self.assertEqual(str(context.exception), "test_var must be greater than 0")
+Code Tests:
 
-if __name__ == "__main__":
-    unittest.main()
+Test Case #1:
+>>> bg.integer_validator("emeka", 20)
+
+Test Case #2:
+>>> bg.integer_validator("emeka", "john") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError: ... must be an integer
+
+Test Case #3:
+>>> bg.integer_validator("emeka", True) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError: ... must be an integer
+
+Test Case #4:
+>>> bg.integer_validator("emeka", 10.0) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError: ... must be an integer
+
+Test Case #5:
+>>> bg.integer_validator("emeka", -10) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+ValueError: ... must be greater than

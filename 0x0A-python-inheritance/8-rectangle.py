@@ -11,7 +11,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """Validates value if int
-        Args: 
+        Args:
             value: value to validtae
             Name: name of the Value
         Raises:

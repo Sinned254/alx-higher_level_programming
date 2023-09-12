@@ -4,6 +4,9 @@
 
 
 class BaseGeometry:
+    """defination  of class ``BaseGeometry`` has modules are and
+    integer validation
+    """
     def area(self):
         """raise exception are not implemeted
         """

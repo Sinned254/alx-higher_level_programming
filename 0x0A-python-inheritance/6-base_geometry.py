@@ -7,4 +7,4 @@ class BaseGeometry:
     """``BaseGeometry`` defination"""
     def area(self):
         """Rasie exception due to lack of implementation"""
-        raise Exception("area() is not implemeted")
+        raise Exception("area() is not implemented")

@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 """Contains ``BaseGeometry`` with method area
 """
+
+
 class BaseGeometry:
+    """defination of class ``BaseGeometry`` contains modules area
+    integer_validator
+    """
     def area(self):
         """raise exception are not implemeted
         """
@@ -9,7 +14,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """Validates value if int
-        Args: 
+        Args:
             value: value to validtae
             Name: name of the Value
         Raises:
@@ -23,7 +28,10 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """Defiantion of class ``Rectangle``, has module area
+    """
     def __init__(self, width, height):
+        """Initializatio of class ``Rectangle`` """
         self.__width = 0  # Initialize width as 0
         self.__height = 0  # Initialize height as 0
         self.integer_validator("width", width)  # Validate and set width
@@ -32,9 +40,13 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
+        """Module returns are of a Rectangle
+        Returns: are of a rectagle
+        """
         return self.__width * self.__height
 
     def __str__(self):
+        """Prints String"""
         return f"[Rectangle] {self.__width}/{self.__height}"
 
     def __repr__(self):
@@ -42,5 +54,7 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
+    """Defiantionf of class ``Square``"""
     def __init__(self, size):
+        """Initialization of class ``Square``"""
         super().__init__(size, size)
