@@ -3,6 +3,7 @@
 projects, to manage ``id`` attribute in other classes
 """
 import json
+import csv
 
 
 class Base:
@@ -83,3 +84,52 @@ class Base:
                 return [cls.create(**dict_item) for dict_item in list_dicts]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """class method serializes a list of objects to a CSV file.
+        Depending on whether it's a Rectangle or Square,
+        it writes the appropriate attribute values to the CSV file.
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """class method deserializes objects from a CSV file.
+        It reads the CSV file and creates objects with the
+        corresponding attribute values based on whether
+        it's a Rectangle or Square.
+        """
+        filename = cls.__name__ + ".csv"
+        objects = []
+        try:
+            with open(filename, mode='r', newline='') as file:
+                reader = csv.reader(file)
+                if cls.__name__ == "Rectangle":
+                    for row in reader:
+                        obj = cls(1, 1)  # Create a dummy instance
+                        obj.id = int(row[0])
+                        obj.width = int(row[1])
+                        obj.height = int(row[2])
+                        obj.x = int(row[3])
+                        obj.y = int(row[4])
+                        objects.append(obj)
+                elif cls.__name__ == "Square":
+                    for row in reader:
+                        obj = cls(1)  # Create a dummy instance
+                        obj.id = int(row[0])
+                        obj.size = int(row[1])
+                        obj.x = int(row[2])
+                        obj.y = int(row[3])
+                        objects.append(obj)
+        except FileNotFoundError:
+            pass
+        return objects
