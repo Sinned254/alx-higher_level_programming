@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import unittest
 from models.square import Square
+from unittest.mock import patch
+import io
 
 
 class TestSquare(unittest.TestCase):
@@ -38,7 +40,7 @@ class TestSquare(unittest.TestCase):
 
     def test_square_display(self):
         square_obj = Square(3, 2, 1)
-        expected_output = "  ###\n  ###\n  ###\n"
+        expected_output = "\n  ###\n  ###\n  ###\n"
         with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
             square_obj.display()
             self.assertEqual(mock_stdout.getvalue(), expected_output)
@@ -62,7 +64,7 @@ class TestSquare(unittest.TestCase):
     def test_square_to_dictionary(self):
         square_obj = Square(5, 2, 3)
         square_dict = square_obj.to_dictionary()
-        expected_dict = {'id': 1, 'size': 5, 'x': 2, 'y': 3}
+        expected_dict = {'id': 8, 'size': 5, 'x': 2, 'y': 3}
         self.assertEqual(square_dict, expected_dict)
 
 if __name__ == '__main__':

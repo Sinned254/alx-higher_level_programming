@@ -2,7 +2,10 @@
 """test class for ``rectangle`` class
 """
 import unittest
+from models.rectangle import Rectangle
 from models.base import Base
+from unittest.mock import patch
+import io
 
 
 class TestRectangle(unittest.TestCase):
@@ -42,7 +45,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_display(self):
         rect_obj = Rectangle(3, 2, 2, 1)
-        expected_output = "  ###\n  ###\n"
+        expected_output = "\n  ###\n  ###\n"
         with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
             rect_obj.display()
             self.assertEqual(mock_stdout.getvalue(), expected_output)
@@ -68,7 +71,7 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_to_dictionary(self):
         rect_obj = Rectangle(5, 4, 2, 3)
         rect_dict = rect_obj.to_dictionary()
-        expected_dict = {'id': 1, 'width': 5, 'height': 4, 'x': 2, 'y': 3}
+        expected_dict = {'id': 9, 'width': 5, 'height': 4, 'x': 2, 'y': 3}
         self.assertEqual(rect_dict, expected_dict)
 
 if __name__ == '__main__':

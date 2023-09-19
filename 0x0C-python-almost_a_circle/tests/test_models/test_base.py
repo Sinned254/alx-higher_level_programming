@@ -17,9 +17,9 @@ class TestBase(unittest.TestCase):
     def test_base_constructor_without_id(self):
         """Check without id"""
         base_obj = Base()
-        self.assertTrue(hasattr(base_obj, 'id')
+        self.assertTrue(hasattr(base_obj, 'id'))
 
-     def test_base_to_json_string(self):
+    def test_base_to_json_string(self):
         list_dicts = [{"id": 1, "name": "John"}, {"id": 2, "name": "Jane"}]
         json_str = Base.to_json_string(list_dicts)
         self.assertEqual(json_str, '[{"id": 1, "name": "John"}, {"id": 2, "name": "Jane"}]')
