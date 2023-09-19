@@ -9,6 +9,17 @@ from models.square import Square
 
 class TestBase(unittest.TestCase):
     """defiantion"""
+    def test_auto_id_assignment(self):
+        # Create multiple instances of Base
+        base1 = Base()
+        base2 = Base()
+        base3 = Base()
+
+        # Verify that each instance has a unique ID
+        self.assertNotEqual(base1.id, base2.id)
+        self.assertNotEqual(base1.id, base3.id)
+        self.assertNotEqual(base2.id, base3.id)
+
     def test_base_constructor_with_id(self):
         """check with id"""
         base_obj = Base(1)
