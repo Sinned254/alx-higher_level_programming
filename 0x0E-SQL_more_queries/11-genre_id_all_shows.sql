@@ -1,6 +1,3 @@
--- Use the hbtn_0d_tvshows database
-USE hbtn_0d_tvshows;
-
 -- List all shows with genres, including those without a genre
 SELECT CONCAT(tv_shows.title, ' - ', IFNULL(tv_show_genres.genre_id, 'NULL')) AS 'Show and Genre'
 FROM tv_shows
