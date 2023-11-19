@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Python script that prints the first State object from the database hbtn_0e_6_usa
+Python script that prints the first
+State object from the database hbtn_0e_6_usa
 """
 
 from sqlalchemy import create_engine
