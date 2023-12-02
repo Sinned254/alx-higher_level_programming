@@ -7,24 +7,9 @@ import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-
     try:
-        # Send a GET request
-        response = requests.get(url)
-        response.raise_for_status()  # Raise an HTTPError for bad responses
-
-        content = response.text
-
-        print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-
-        # Check if HTTP status code is greater than or equal to 400
-        if response.status_code >= 400:
-            print("Error code: {}".format(response.status_code))
-
-    except requests.RequestException as e:
-        print("Error accessing the URL: {}".format(e))
-    except Exception as e:
-        print("An unexpected error occurred: {}".format(e))
+        response = requests.get(sys.argv[1])
+        response.raise_for_status()
+        print(response.text)
+    except requests.exceptions.HTTPError as error:
+        print('Error code: {}'.format(error.response.status_code))
