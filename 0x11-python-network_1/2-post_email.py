@@ -7,31 +7,9 @@ import urllib.parse
 import sys
 
 
-def send_post_request(url, email):
-    try:
-        # Encode the email parameter
-        data = urllib.parse.urlencode({'email': email}).encode('utf-8')
-
-        # Send a POST request
-        with urllib.request.urlopen(url, data) as response:
-            html_content = response.read().decode('utf-8')
-
-            print("Body response:")
-            print("\t- type: {}".format(type(html_content)))
-            print("\t- content: {}".format(html_content))
-
-    except urllib.error.URLError as e:
-        print("Error accessing the URL: {}".format(e))
-    except Exception as e:
-        print("An unexpected error occurred: {}".format(e))
-
-
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <URL> <email>")
-        sys.exit(1)
-
-    url = sys.argv[1]
-    email = sys.argv[2]
-
-    send_post_request(url, email)
+    data = urllib.parse.urlencode({'email': sys.argv[2]})
+    data = data.encode('utf-8')
+    request = urllib.request.Request(sys.argv[1], data)
+    with urllib.request.urlopen(request) as response:
+        print(response.read().decode(encoding='utf-8'))
